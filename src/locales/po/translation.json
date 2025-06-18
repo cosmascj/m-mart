@@ -1,0 +1,9 @@
+{
+    "pageTitles":{
+        "login": "je suis connectre â votre compte",
+        "signup": "créer un nouveau compte",
+        "forgotPassword": "réinitialiser votre mot de passe",
+        "verifyEmail": "vérifier votre adresse e-mail",
+        "ResetPassword": "créer un nouveau mot de passe"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "pageTitles": {
+        "login": "Log into you account",
+        "signup": "Create a new account",
+        "forgotPassword": "Reset your password",
+        "verifyEmail": "Verify your email Address",
+        "ResetPassword": "Creat a new Password"
+    },
+    "pageDescriptions": {
+        "forgotPassword": "Enter email associated with your account and we'll send an email with instructions to reset your password",
+        "verifyEmail": "Please enter the verification code we sent to you email address."
+    },
+    "formLabels": {
+        "loginEmail": "Email address",
+        "loginPassword": "Password",
+        "forgotPassword": "Enter your email"
+    },
+    "pageButtons": {
+        "login":"LOG IN",
+        "signup":"SIGN UP",
+        "forgotPasswod": "Confirm"
+    }
+}
