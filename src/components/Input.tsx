@@ -3,7 +3,8 @@ import React, { forwardRef, JSX, LegacyRef, ReactNode, useState } from 'react';
 import {
     NativeSyntheticEvent,
     StyleProp, StyleSheet,
-    TextInput, TextInputFocusEventData, TextInputProps, TextStyle, TouchableOpacity, useColorScheme, useWindowDimensions, View, ViewStyle
+    TextInput, TextInputFocusEventData, TextInputProps, TextStyle, TouchableOpacity, useColorScheme,
+    View, ViewStyle
 } from 'react-native';
 import { Colors } from '../constants/colors';
 import { ThemedText } from './ThemedText';
@@ -51,31 +52,23 @@ export const Input = forwardRef<TextInput, InputProps>(
         ref
     ): JSX.Element => {
         const [showPassword, setShowPassword] = useState<boolean>(!secureTextEntry);
-        const { width } = useWindowDimensions();
         const toggleSetShowPassword = () => setShowPassword((prev) => !prev);
         const theme = useColorScheme() ?? "light";
         return (
             <ThemedView style={[styles.container, coverStyle]}>
-                {/* {label && (
-                    <Text
+                    <ThemedText
                         style={[
                             styles.labelText,
-                            {
-                                color:
-                                    theme === "light" ? Colors.light.primaryTextColor : "#fff",
-                            },
                             labelStyle,
                         ]}
                     >
                         {label}
-                    </Text>
-                )} */}
+                    </ThemedText>
                 <ThemedTouchableView
                     activeOpacity={1}
                     onPress={() => !editable && onPressRight?.()}
                     style={[
                         styles.content,
-                        // isFocused && { borderColor: Colors.light.inputBorder, borderWidth: 1 },
                         !!error && { borderColor: Colors.light.red },
                         !!LeftComponent && { paddingLeft: 10 },
                         (!!RightComponent || secureTextEntry) && { paddingRight: 10 },
@@ -85,14 +78,7 @@ export const Input = forwardRef<TextInput, InputProps>(
                         },
                         style,
                     ]}
-                // style={[
-                //   styles.content,
-                //   !!error && { borderColor: Colors.light.red },
-                //   !!LeftComponent && { paddingLeft: 10 },
-                //   (!!RightComponent || secureTextEntry) && { paddingRight: 10 },
-                //   // !editable && { backgroundColor: Colors.light.borderGrey },
-                //   style,
-                // ]}
+         
                 >
                     {LeftComponent && LeftComponent}
                     <TextInput
@@ -163,10 +149,11 @@ const styles = StyleSheet.create({
     },
     input: {
         flex: 1,
-// backgroundColor:'red',
-        paddingHorizontal: 11,
+        paddingHorizontal: 10,
     },
     labelText: {
-        marginBottom: 5,
+        marginBottom: 0,
+        marginStart:8,
+        fontWeight:'bold',
     },
 });

@@ -1,12 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import './i18n';
 import LoadApp from './src/core/LoadApp';
 
 const App = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
    <SafeAreaProvider>

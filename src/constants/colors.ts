@@ -1,7 +1,7 @@
 export const Colors = {
     light: {
         transparent: 'transparent',
-        primaryBrown: '#343434',
+        primaryBrown: '#3A2C27',
         primarybrowntext:'#43484B',
         background: '#fff',
         icon: '#687076',

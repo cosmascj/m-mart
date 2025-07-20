@@ -26,7 +26,6 @@ export default function Features({navigation}: StackNavigationProps<AuthRoutes, 
         const newIndex = Math.round(contentOffset / width);
         setCurrentIndex(newIndex);
     };
-    const WIDTH = Dimensions.get('screen').width
     const [counter, setCounter] = useState(0)
 
     useEffect(() => {

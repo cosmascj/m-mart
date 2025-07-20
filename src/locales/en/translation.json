@@ -4,7 +4,26 @@
         "signup": "Create a new account",
         "forgotPassword": "Reset your password",
         "verifyEmail": "Verify your email Address",
-        "ResetPassword": "Creat a new Password"
+        "ResetPassword": "Create a new Password"
+    },
+    "splash":{
+        "title": "Welcome to M-Mart",
+        "sub":"The Home for fashion"
+    },
+    "featurePages":{
+        "feature1":{
+            "title": "Discover something new",
+            "subTitle": "Special new arrivals just for you"
+        },
+        "feature2":{
+            "title":"Update trendy outfit",
+            "subTitle":"Favorite brands and hottest trends"
+        },
+        "feature3":{
+            "title":"Explore your true style",
+            "subTitle": "Relax and let us bring the style to you"
+        },
+        "buttonText":"Shooping Now"
     },
     "pageDescriptions": {
         "forgotPassword": "Enter email associated with your account and we'll send an email with instructions to reset your password",
@@ -19,5 +38,10 @@
         "login":"LOG IN",
         "signup":"SIGN UP",
         "forgotPasswod": "Confirm"
+    },
+    "bottomsheet":{
+        "restPasswordTitle":"Passwordchanged successfully",
+        "resetPasswordButton":"Browse Home",
+        "creatSheetTitle": "Add sheet"
     }
 }

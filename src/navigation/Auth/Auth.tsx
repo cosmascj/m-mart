@@ -3,7 +3,6 @@ import { Features, ForgotPassword, Login, Onboard, ResetPassword, Signup, Verify
 import {
   createStackNavigator
 } from "@react-navigation/stack";
-import React from "react";
 import { AuthRoutes } from "../Types/auth";
 
 const { Group, Navigator, Screen } = createStackNavigator<AuthRoutes>();
@@ -18,7 +17,7 @@ export default function AuthNavigator() {
         cardOverlayEnabled: true,
       }}
     >
-  
+
       <Group>
       <Screen name='Onboarding' component={Onboard} />
       <Screen name='Features' component={Features} />

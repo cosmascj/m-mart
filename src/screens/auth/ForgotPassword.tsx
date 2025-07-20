@@ -5,7 +5,7 @@ import { Fontisto } from '@expo/vector-icons'
 import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
 
-export default function ForgotPassword({navigation}: StackNavigationProps<AuthRoutes, 'ForgotPassword'>) {
+export default function ForgotPassword({ navigation }: StackNavigationProps<AuthRoutes, 'ForgotPassword'>) {
     const [email, setEmail] = useState('')
     return (
         <PageWrapper>
@@ -18,6 +18,7 @@ export default function ForgotPassword({navigation}: StackNavigationProps<AuthRo
                     </ThemedText>
 
                     <Input
+                        label={email?.length > 0 ? 'Email' : ''}
                         onChangeText={(val) => setEmail(val)}
                         LeftComponent={<Fontisto name="email" size={20} color="gray" />}
                         placeholder='Enter your email here'

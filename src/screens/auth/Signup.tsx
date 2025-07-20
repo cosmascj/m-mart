@@ -37,9 +37,10 @@ export default function Signup({ navigation }: StackNavigationProps<AuthRoutes, 
       safeAreaUpColor={theme === 'light' ? Colors.light.white : Colors.dark.headerBg}
     >
       <ThemedView style={{ padding: 20, flex: 1 }}>
-        <ThemedText type='title' style={{ fontSize: 24,  marginTop: 20, lineHeight:30,  }}>Create {'\n'}your account</ThemedText>
+        <ThemedText type='title' style={{ fontSize: 24, marginTop: 20, lineHeight: 30, }}>Create {'\n'}your account</ThemedText>
         <ThemedView style={{ marginTop: 50 }}>
           <Input
+            label={inputs?.name.length > 0 ? 'Name' : ''}
             placeholder='Enter your name'
             onChangeText={(text) => handleOnchange(text, 'name')}
             error={errors.name}
@@ -47,6 +48,7 @@ export default function Signup({ navigation }: StackNavigationProps<AuthRoutes, 
             onBlur={() => handleError(null, 'name')}
           />
           <Input
+            label={inputs?.email.length > 0 ? 'Email' : ''}
             onChangeText={(text) => handleOnchange(text, 'email')}
             error={errors.email}
             onBlur={() => handleError(null, 'email')}
@@ -56,6 +58,7 @@ export default function Signup({ navigation }: StackNavigationProps<AuthRoutes, 
 
           />
           <Input
+            label={inputs?.password.length > 0 ? 'Password' : ''}
             onChangeText={(text) => handleOnchange(text, 'password')}
             error={errors.password}
             secureTextEntry
@@ -64,12 +67,12 @@ export default function Signup({ navigation }: StackNavigationProps<AuthRoutes, 
 
           />
           <Input
+            label={inputs?.confirmPassword.length > 0 ? 'Confirm Password' : ''}
             onChangeText={(text) => handleOnchange(text, 'confirmPassword')}
             error={errors.confirmPassword}
             secureTextEntry
             placeholder='Confirm Password'
             autoCapitalize='none'
-
           />
 
         </ThemedView>
@@ -80,9 +83,9 @@ export default function Signup({ navigation }: StackNavigationProps<AuthRoutes, 
           text='SIGN UP'
           onPress={handleSubmit}
         />
-        <ThemedTouchableView 
-        onPress={() => navigation.navigate('Login')}
-        style={{ marginTop: '20%', alignItems: 'center' }}>
+        <ThemedTouchableView
+          onPress={() => navigation.navigate('Login')}
+          style={{ marginTop: '20%', alignItems: 'center' }}>
           <ThemedText style={{ fontWeight: '600' }}>Already have an account? <ThemedText style={{ textDecorationLine: 'underline' }}>Log in</ThemedText></ThemedText>
         </ThemedTouchableView>
       </ThemedView>

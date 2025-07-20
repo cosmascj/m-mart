@@ -1,15 +1,15 @@
-// import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 import { NavigationContainer } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import React, { useEffect } from 'react'
 import { StyleSheet } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { AuthNavigator } from '../navigation/Auth'
+import { MainNavigator } from '../navigation/Main'
 SplashScreen.preventAutoHideAsync();
 
 export default function LoadApp() {
-    const [loaded, error] = useFonts({
+  const [loaded, error] = useFonts({
     'SansBold': require('../assets/fonts/PTSans-Bold.ttf'),
     'SansRegular': require('../assets/fonts/PTSans-Regular.ttf'),
     'SansItalic': require('../assets/fonts/PTSans-Italic.ttf'),
@@ -27,13 +27,17 @@ export default function LoadApp() {
   }
 
   return (
-    // <BottomSheetModalProvider>
-    <NavigationContainer>
-        <GestureHandlerRootView style={{ flex: 1 }}>
-              <AuthNavigator />
-        </GestureHandlerRootView>
-      </NavigationContainer>
-    // </BottomSheetModalProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <BottomSheetModalProvider>
+        <NavigationContainer>
+          {/* The AuthNavigation is the for the authentication pages */}
+          {/* The MainNavigator is the for the Dashboard, cart and product section of the application */}
+          {/*  AppData.token from store and optinally render the desired stack */}
+          {/* {appData?.token !== null ?<MainNavigator /> : <AuthNavigator /> } */}
+          <MainNavigator />
+        </NavigationContainer>
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   )
 }
 

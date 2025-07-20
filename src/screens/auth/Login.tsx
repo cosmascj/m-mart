@@ -40,12 +40,14 @@ export default function Login({ navigation }: StackNavigationProps<AuthRoutes, '
                 <ThemedText type='title' style={{ fontSize: 24, marginTop: 20 }}>Log into {'\n'}your account</ThemedText>
                 <ThemedView style={{ marginTop: 50 }}>
                     <Input
+                    label={inputs.email.length > 0 ? 'Email': ''}
                         onChangeText={(text) => handleOnchange(text, 'email')}
                         error={errors.email}
                         onBlur={() => handleError(null, 'email')}
                         placeholder='Email address'
                     />
                     <Input
+                    label={inputs?.password.length > 0 ? 'Password': ''}
                         onChangeText={(text) => handleOnchange(text, 'password')}
                         error={errors.password}
                         secureTextEntry
